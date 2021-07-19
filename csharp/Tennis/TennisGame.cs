@@ -15,7 +15,7 @@ namespace Tennis
 
         public void WonPoint(string playerName)
         {
-            if (playerName == "player1")
+            if (playerName == _player1Name)
                 _mScore1 += 1;
             else
                 _mScore2 += 1;
@@ -49,14 +49,14 @@ namespace Tennis
                 switch (minusResult)
                 {
                     case 1:
-                        score = "Advantage player1";
+                        score = "Advantage " + _player1Name;
                         break;
                     case -1:
-                        score = "Advantage player2";
+                        score = "Advantage " + _player2Name;
                         break;
                     default:
                     {
-                        score = minusResult >= 2 ? "Win for player1" : "Win for player2";
+                        score = minusResult >= 2 ? "Win for " + _player1Name : "Win for " + _player2Name;
                         break;
                     }
                 }
